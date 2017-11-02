@@ -1,2 +1,4 @@
-# BlogAdmin
-A simple UI for adding articles to the IEEE NITK Blog via a Simple UI that needs only GitHub login using GitHub v3 REST API.
+# Ride Sharing
+
+* Inside the Datasets folder is a Dataset for Bike Sharing in the UCI Machine Learning Dataset for Bicycles around their campus.
+ 
