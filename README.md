@@ -8,10 +8,10 @@
 * Salman Shah
 * Hrishi Hiraskar
 * Aditya A
-* Mohiitaa C
-* Jeshventh R.
+* Mohita Chowdhury
+* Jeshventh Raja
 
 ## Second Years
 * Anumeha Agarwal 
-* Adil A.
-* Rosa G.
+* Adil Ashique
+* Rosa George
