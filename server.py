@@ -6,6 +6,8 @@ from flask_httpauth import HTTPDigestAuth
 
 # Flask Variables
 app = Flask(__name__)
+
+training_data="datasets/bike-sharing.csv"
 monkey.patch_all()
 
 auth = HTTPDigestAuth()
