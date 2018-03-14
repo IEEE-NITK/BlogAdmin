@@ -39,19 +39,17 @@ def index():
 def predict():
     if clf:
         try:
-            json_ = request.json
+            json_ = request.json['data']
+            print("train first")
             query = pd.get_dummies(pd.DataFrame(json_))
-
-            # https://github.com/amirziai/sklearnflask/issues/3
-            # Thanks to @lorenzori
-
             prediction = list(clf.predict(query))
+            json.dumps({"result":prediction})
+            return render_template('result.html', result=jsonify({'prediction': prediction}))
 
-            return jsonify({'prediction': prediction})
 
         except Exception as e:
 
-            return jsonify({'error': str(e), 'trace': traceback.format_exc()})
+            return render_template('result.html', result=jsonify({'error': str(e), 'trace': traceback.format_exc()}))
     else:
         print("train first")
         return None 
