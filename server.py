@@ -4,7 +4,8 @@ from flask import Flask, request, Response, render_template, abort, url_for, jso
 import gevent
 from sklearn.externals import joblib
 from flask_httpauth import HTTPDigestAuth
-
+import pandas as pd
+import traceback
 # Flask Variables
 app = Flask(__name__)
 clf=joblib.load('models/models.pk')
