@@ -12,6 +12,6 @@
 * Jeshventh Raja
 
 ## Second Years
-* Anumeha Agarwal 
+* Anumeha Agrawal 
 * Adil Ashique
 * Rosa George
