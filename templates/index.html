@@ -1,80 +1,260 @@
 <html>
 
 <head>
-    <title>Bike Sharing Project - IEEE NITK</title>
-    <!-- Compiled and minified CSS -->
-    <!-- Load Core Materialize CSS  -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
-    <link rel="stylesheet" href="/static/css/style.css">
-
-    <link rel="shortcut icon" href="/static/img/logo.png" type="image/x-icon">
-
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
-    <script type="text/javascript" src="/static/js/script.js"></script>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<title>Bike Sharing Project - IEEE NITK</title>
+	<!-- Compiled and minified CSS -->
+	<!-- Load Core Materialize CSS  -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+	<link rel="stylesheet" href="/static/css/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="shortcut icon" href="/static/img/logo.png" type="image/x-icon">
+	<link rel="stylesheet" href="style1.css">
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+	<script type="text/javascript" src="/static/js/script.js"></script>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
-    <header>
-        <nav class="blue">
-            <div class="nav-wrapper">
-                <a href="https://nitk.ac.in" class="brand-logo right">
+	<header>
+		<nav class="blue">
+			<div class="nav-wrapper">
+				<a href="https://nitk.ac.in" class="brand-logo right">
 
-                    <img class="responsive-img" src="/static/img/logo.png" style="height: 60px;">
-                </a>
-                <ul id="nav-mobile" class="left hide-on-med-and-down">
-                    <li class="active">
-                        <a href="/">Home</a>
-                    </li>
-                    <li>
-                        <a href="/about">About</a>
-                    </li>
-                    <li>
-                        <a href="/photos">Photos</a>
-                    </li>
-                </ul>
-                <p class="flow-text center hide-on-med-and-down">Bike Sharing Project - IEEE NITK</p>
-            </div>
-        </nav>
+					<img class="responsive-img" src="/static/img/logo.png" style="height: 60px;">
+				</a>
+				<ul id="nav-mobile" class="left hide-on-med-and-down">
+					<li class="active">
+						<a href="/">Home</a>
+					</li>
+					<li>
+						<a href="/about">About</a>
+					</li>
+					<li>
+						<a href="/photos">Photos</a>
+					</li>
+				</ul>
+				<p class="flow-text center hide-on-med-and-down">Bike Sharing Project - IEEE NITK</p>
+			</div>
+		</nav>
 
-    </header>
+	</header>
 
-    <main>
-        <body>
-   
-    </main>
+	<main>
+		<style>
+			.parallax {
+				/* The image used */
+				background-image: url("dsc_0028.jpg");
 
-    <br>
-    <br>
-    <hr>
+				/* Set a specific height */
+				height: 1000px;
 
-    <footer class="page-footer blue">
-        <div class="container">
-            <div class="row">
-                <div class="col l6 s12">
-                    <h5 class="white-text">Bike Sharing Project - IEEE NITK</h5>
-                    <p class="grey-text text-lighten-4">Bringing your future to you</p>
-                </div>
-                <div class="col l4 offset-l2 s12">
-                    <h5 class="white-text">Links</h5>
-                    <ul>
-                        <li>
-                            <a class="grey-text text-lighten-3" href="https://ieeenitk.org">IEEE NITK Website</a>
-                        </li>
-                        <li>
-                            <a class="grey-text text-lighten-3" href="https://ieeenitk.org/Bike-Project">Bike Prediction Project</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+				/* Create the parallax scrolling effect */
+				background-attachment: fixed;
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: cover;
+			}
+		</style>
+
+		<!-- Container element -->
+		<div class="parallax">
+		</div>
+
+		<script src="https://code.highcharts.com/highcharts.js">
+		</script>
+
+		<div id="container" style="float:right;width:920px;height:600px;">
+		</div>
+		
+		<script>
+			Highcharts.chart('container', {
+				title: {
+					text: 'Number of Users per Hour in a Day'
+				},
+				xAxis: {
+					title: {
+						enabled: true,
+						text: 'Hours of the Day'
+					},
+
+					type: 'datetime',
+					tickInterval: 3600 * 1000,
+					min: Date.UTC(2013, 4, 22),
+					max: Date.UTC(2013, 4, 23),
+
+
+				},
+				yAxis: {
+					title: {
+						text: 'No of users'
+					}
+				},
+				plotOptions: {
+					series: {
+						pointStart: Date.UTC(2013, 4, 22),
+	                    pointInterval: 3600 * 1000 // one day
+	                }
+	            },
+	            series: [{
+	            	data: [29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4, 30, 13, 12, 14, 15, 16, 14, 34, 67, 22, 23, 24, 25]
+	            }, {
+	            	data: [144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4, 29.9, 71.5, 106.4, 129.2, 30, 14, 15, 23, 34, 45, 65, 34, 43, 21, 32, 43, 21]
+	            }]
+	        });
+	    </script>
+
+
+        <div class="divider" style="width:360px">
         </div>
-        <div class="footer-copyright">
-            <div class="container">
-                © 2017 Copyright Text
-            </div>
+
+        <div class="section" style="background-color: white">
+        	<h6>SEASONS</h6>
+        	<form action="#">
+        		<input class="with-gap" name="group1" type="radio" id="test1" />
+        		<label for="test1">
+        			<i class="fa fa-sun-o" style="font-size:30px;color:yellow;"></i>
+        		</label>
+        		<input class="with-gap" name="group1" type="radio" id="test2" />
+        		<label for="test2">
+        			<i class="fa fa-snowflake-o" style="font-size:30px;color:blue;"></i>
+        		</label>
+        		<input class="with-gap" name="group1" type="radio" id="test3" />
+        		<label for="test3">
+        			<i class="fa fa-leaf" style="font-size:30px;color:red;"></i>
+        		</label>
+        		<input class="with-gap" name="group1" type="radio" id="test4" />
+        		<label for="test4">
+        			<i class="fa fa-pagelines" style="font-size:30px;color:green;"></i>
+        		</label>
+
+        	</form>
         </div>
-    </footer>
+
+        <div class="divider" style="width:360px">
+        </div>
+
+        <div class="section" style="background-color: white">
+        	<h6>DAY OF THE WEEK</h6>
+        	<form action="#">
+        		<input class="with-gap" name="group1" type="radio" id="test5" />
+        		<label for="test5">Holiday</label>
+        		<input class="with-gap" name="group1" type="radio" id="test6" />
+        		<label for="test6">Weekend</label>
+        		<input class="with-gap" name="group1" type="radio" id="test7" />
+        		<label for="test7">Weekday</label>
+        	</form>
+        </div>
+        
+        <div class="divider" style="width:360px">
+        </div>
+        
+        <div class="section" style="background-color: white">
+        	<h6>WEATHER</h6>
+        	<form action="#">
+        		<input class="with-gap" name="group1" type="radio" id="test8" />
+        		<label for="test8">
+        			<i class="fa fa-sun-o" style="font-size:30px;"></i>
+        		</label>
+        		<input class="with-gap" name="group1" type="radio" id="test9" />
+        		<label for="test9">
+        			<i class="fa fa-umbrella" style="font-size:30px;"></i>
+        		</label>
+        		<input class="with-gap" name="group1" type="radio" id="test10" />
+        		<label for="test10">
+        			<i class="fa fa-flash" style="font-size:30px;"></i>
+        		</label>
+        		<input class="with-gap" name="group1" type="radio" id="test11" />
+        		<label for="test11">
+        			<i class="fa fa-cloud" style="font-size:30px;"></i>
+        		</label>
+        	</form>
+        </div>
+
+        <div class="divider" style="width:360px">
+        </div>
+
+        <div class="section" style="height:100px;background-color: white">
+        	<h6>TEMPERATURE</h6>
+        	<p>
+        		<form action="#">
+        			<p class="range-field">
+        				<input type="range" id="test5" min="0" max="45" style="width: 200px" />
+        			</p>
+        		</form>
+        	</p>
+        </div>
+        
+        <div class="divider" style="width:360px">
+        </div>
+        
+        <div class="section" style="height:100px;background-color: white">
+        	<h6>ATEMP</h6>
+        	<p>
+        		<form action="#">
+        			<p class="range-field">
+        				<input type="range" id="test5" min="0" max="50" style="width: 200px" />
+        			</p>
+        		</form>
+        	</p>
+        </div>
+
+	    <div class="divider" style="width:360px">
+	    </div>
+    
+	    <div class="section" style="height:100px;background-color: white">
+	    	<h6>WINDSPEED</h6>
+	    	<p>
+	    		<form action="#">
+	    			<p class="range-field">
+	    				<input type="range" id="test5" min="0" max="30" style="width: 200px" />
+	    			</p>
+	    		</form>
+	    	</p>
+	    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	    	<script type="text/javascript" src="{{ url_for('static'), filename='/js/jquery-3.2.1.min.js'}}"></script>
+	    	<form action="{{ url_for('/table_data') }}" class="form-inline" method="post" role="form" enctype="application/json">
+	    		<input type="text" class="form-control" id="name" name="name">
+	    		<input type="text" class="form-control" id="state" name="state">
+	    		<input type="text" class="form-control" id="id" name="id">
+	    		<button type='submit' class="btn btn-default">Submit</button>
+	    	</form>
+	    	<p id="response"></p>s
+	    </div>
+
+	</main>
+
+	<br><br>
+
+	<hr>
+
+	<footer class="page-footer blue">
+		<div class="container">
+			<div class="row">
+				<div class="col l6 s12">
+					<h5 class="white-text">Bike Sharing Project - IEEE NITK</h5>
+					<p class="grey-text text-lighten-4">Bringing your future to you</p>
+				</div>
+				<div class="col l4 offset-l2 s12">
+					<h5 class="white-text">Links</h5>
+					<ul>
+						<li>
+							<a class="grey-text text-lighten-3" href="https://ieeenitk.org">IEEE NITK Website</a>
+						</li>
+						<li>
+							<a class="grey-text text-lighten-3" href="https://ieeenitk.org/Bike-Project">Bike Prediction Project</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="footer-copyright">
+			<div class="container">
+
+				© 2017 Copyright Text
+			</div>
+		</div>
+	</footer>
 </body>
 <script>
     var value = $('#data_send').val();
