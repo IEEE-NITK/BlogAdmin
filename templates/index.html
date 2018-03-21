@@ -256,5 +256,19 @@
 		</div>
 	</footer>
 </body>
+<script>
+    var value = $('#data_send').val();
+    $.ajax({
+    type: 'POST',
+    url: "{{ url_for('predict') }}",
+    data: JSON.stringify(value),
+    contentType: 'application/json',
+    success:function(json)
+          {
+            alert(json.result);  
 
+          }
+    
+});
+</script>
 </html>
