@@ -5,7 +5,6 @@ import calendar
 import pickle
 from sklearn.externals import joblib
 from sklearn.svm import SVR
-#from tensorflow.contrib import skflow
 
 from sklearn.model_selection import GridSearchCV, RandomizedSearchCV
 from sklearn.cross_validation import train_test_split
