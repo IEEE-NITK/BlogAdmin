@@ -28,13 +28,15 @@ def build_train():
 
 	score_svr = r2_score(y_test, svr_pred)
 	rmse_svr = sqrt(mean_squared_error(y_test, svr_pred))
-
-	print(svr_pred)
-	return(svr)
+	print(y_test)
+	return(svr_pred,y_test)
 
 if __name__ == '__main__':
-	model = build_train()
+	svr_pred,y_test = build_train()
 
-	filename = 'models.pk'
+	filename = 'models_pred.pk'
 	with open('models/'+filename, 'wb') as file:
-		pickle.dump(model, file)
+		pickle.dump(y_test, file)
+	filename_ex = 'models_exp.pk'
+	with open('models/'+filename_ex, 'wb') as file:
+		pickle.dump(svr_pred, file)
