@@ -13,7 +13,7 @@ app = Flask(__name__)
 clf_pred=joblib.load('models/models_pred.pk')
 clf_exp=joblib.load('models/models_exp.pk')
 
-print(clf_pred)
+
 monkey.patch_all()
 
 auth = HTTPDigestAuth()
@@ -39,27 +39,8 @@ def get_pw(username):
 @app.route('/')
 @auth.login_required
 def index():
-    return render_template('index.html', name='Cycle Project')
-'''
-@app.route('/predict', methods=['POST'])
-def predict():
-    if clf:
-        try:
-            json_ = request.json['data']
-            print("train first")
-            query = pd.get_dummies(pd.DataFrame(json_))
-            prediction = list(clf.predict(query))
-            json.dumps({"result":prediction})
-            return render_template('result.html', result=jsonify({'prediction': prediction}))
+    return render_template('index.html')
 
-
-        except Exception as e:
-
-            return render_template('result.html', result=jsonify({'error': str(e), 'trace': traceback.format_exc()}))
-    else:
-        print("train first")
-        return None 
-'''   
 
 # Main Method in the Server code
 if __name__ == '__main__':

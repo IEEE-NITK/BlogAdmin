@@ -213,7 +213,7 @@
 	    	</p>
 	    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	    	<script type="text/javascript" src="{{ url_for('static'), filename='/js/jquery-3.2.1.min.js'}}"></script>
-	    	<form action="{{ url_for('/table_data') }}" class="form-inline" method="post" role="form" enctype="application/json">
+			<form action="" class="form-inline" method="post" role="form" enctype="application/json">
 	    		<input type="text" class="form-control" id="name" name="name">
 	    		<input type="text" class="form-control" id="state" name="state">
 	    		<input type="text" class="form-control" id="id" name="id">
@@ -256,19 +256,5 @@
 		</div>
 	</footer>
 </body>
-<script>
-    var value = $('#data_send').val();
-    $.ajax({
-    type: 'POST',
-    url: "{{ url_for('predict') }}",
-    data: JSON.stringify(value),
-    contentType: 'application/json',
-    success:function(json)
-          {
-            alert(json.result);  
 
-          }
-    
-});
-</script>
 </html>
