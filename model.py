@@ -27,8 +27,8 @@ def build_train():
 
 	score_svr = r2_score(y_test, svr_pred)
 	rmse_svr = sqrt(mean_squared_error(y_test, svr_pred))
-	print(y_test)
-	return(svr_pred,y_test)
+	
+	return(svr_pred.tolist(),y_test.tolist())
 
 if __name__ == '__main__':
 	svr_pred,y_test = build_train()

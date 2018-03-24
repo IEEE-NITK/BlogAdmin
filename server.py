@@ -13,7 +13,6 @@ app = Flask(__name__)
 clf_pred=joblib.load('models/models_pred.pk')
 clf_exp=joblib.load('models/models_exp.pk')
 
-print(clf_pred)
 monkey.patch_all()
 
 auth = HTTPDigestAuth()
@@ -34,12 +33,15 @@ def get_pw(username):
     if username in users:
         return users.get(username)
     return None
-
+@app.route('/about')
+def about():
+    return render_template('about.html')
 
 @app.route('/')
 @auth.login_required
 def index():
-    return render_template('index.html', name='Cycle Project')
+
+    return render_template('index.html', name='Cycle Project',data1=clf_exp,data2=clf_pred)
 '''
 @app.route('/predict', methods=['POST'])
 def predict():
