@@ -26,60 +26,77 @@ var _a, _b;
 function myFunction(choice){
     if(choice == 'Summer') {
      season=2
-     $('#test1').addClass('pink');
-     $('#test2').removeClass('pink');
-     $('#test3').removeClass('pink');
-     $('#test4').removeClass('pink');
+     $('#test1').addClass('grey');
+     $('#test2').removeClass('grey');
+     $('#test3').removeClass('grey');
+     $('#test4').removeClass('grey');
    }
 
    else if (choice == 'Winter') {
         season=4
-        $('#test1').removeClass('pink');
-        $('#test2').addClass('pink');
-$('#test3').removeClass('pink');
-$('#test4').removeClass('pink');
+        $('#test1').removeClass('grey');
+        $('#test2').addClass('grey');
+$('#test3').removeClass('grey');
+$('#test4').removeClass('grey');
     }
    else if (choice == 'Spring') {
        season=1
-       $('#test1').removeClass('pink');
-       $('#test2').removeClass('pink');
-       $('#test3').removeClass('pink');
-       $('#test4').addClass('pink');
+       $('#test1').removeClass('grey');
+       $('#test2').removeClass('grey');
+       $('#test3').removeClass('grey');
+       $('#test4').addClass('grey');
     }
     
     else if (choice == 'Autumn') {
         season=3
-        $('#test1').removeClass('pink');
-        $('#test2').removeClass('pink');
-        $('#test3').addClass('pink');
-    $('#test4').removeClass('pink');
+        $('#test1').removeClass('grey');
+        $('#test2').removeClass('grey');
+        $('#test3').addClass('grey');
+    $('#test4').removeClass('grey');
     }
 
 
     if (choice == 'Rainy') {
-        weather=4
+        weather=4   
+        $('#test8').removeClass('grey');
+        $('#test9').addClass('grey');
+        $('#test10').removeClass('grey');
+        $('#test11').removeClass('grey');
     }
     else if (choice == 'Stormy') {
-        weather=3
+        weather=3   
+        $('#test8').removeClass('grey');
+        $('#test9').removeClass('grey');
+        $('#test10').addClass('grey');
+        $('#test11').removeClass('grey');
     }
     else if (choice == 'Sunny') {
-        weather=1
+        weather=1;
+        console.log("fads")
+        $('#test8').addClass('grey');
+        $('#test9').removeClass('grey');
+        $('#test10').removeClass('grey');
+        $('#test11').removeClass('grey');
     }
     else if (choice == 'Cloudy') {
         weather=2
+         $('#test8').removeClass('grey');
+        $('#test9').removeClass('grey');
+        $('#test10').removeClass('grey');
+        $('#test11').addClass('grey');
     }
 
     if (choice == 'Weekend') {
         Holiday= 1 - Holiday
+        workingday = (holiday == 0) ? 1 : 0;
     }
     else if (choice == 'Holiday') {
         Holiday= 1- Holiday
+        workingday = (holiday == 0) ? 1 : 0;
     }
     else if (choice == 'Weekday') {
-        Weekday= 1- Weekday
-    }
-    else if (choice == 'Weekday') {
-        workingday = 1 - workingday
+        Weekday= Math.floor(Math.random()*7);
+        workingday = (Weekday<=4) ? 1 : 0;
     }
 }
 // season int64
@@ -110,7 +127,9 @@ function submit(){
             success: function(result){
                 console.log(result);
                 r = JSON.parse(result);
-                $('#response').html(`Casual Users: ${r['y_cas']}<br>Regular Users: ${r['y_reg']}<br>`)
+                r['y_cas'] = Math.floor(r['y_cas'] / 1)
+                r['y_reg'] = Math.floor(r['y_reg'] / 1)
+                $('#response').html(`<b>Casual Users:</b> ${r['y_cas']}<br><b>Regular Users:</b> ${r['y_reg']}<br>`)
             }
         });
 }

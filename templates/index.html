@@ -64,7 +64,7 @@
                             <form action="#">
                             <a class="waves-effect waves-light btn" onclick="myFunction('Summer')" id="test1" style="background-color:#159CEE;"><i class="fa fa-sun-o" style="font-size:30px;color:yellow;" ></i></a>
                             <a class="waves-effect waves-light btn" onclick="myFunction('Winter')"id="test2" style="background-color:#159CEE;"><i class="fa fa-snowflake-o" style="font-size:30px;color:blue;"></i></a>
-                            <a class="waves-effect waves-light btn" onclick="myFunction('Autumn')" id="test3" style="background-color:#159CEE;"><i class="fa fa-leaf" style="font-size:30px;color:red;"></i></a>
+                            <a class="waves-effect waves-light btn grey" onclick="myFunction('Autumn')" id="test3" style="background-color:#159CEE;"><i class="fa fa-leaf" style="font-size:30px;color:red;"></i></a>
                             <a class="waves-effect waves-light btn" onclick="myFunction('Spring')"id="test4" style="background-color:#159CEE;"><i class="fa fa-pagelines" style="font-size:30px;color:green;" ></i></a>
 
                             </form>
@@ -79,8 +79,6 @@
                             <label for="test6">Weekend</label>
                             <input class="with-gap" name="group1" type="radio" id="test7" onclick="myFunction('Weekday')" />
                             <label for="test7">Weekday</label>
-                            <input class="with-gap" name="group1" type="radio" id="test8" onclick="myFunction('WorkingDay')" />
-                            <label for="test7">Working Day</label>
                             </form>
                             </div>
                             <div class="divider" style="width:360px"></div>
@@ -90,7 +88,7 @@
                             <a class="waves-effect waves-light btn" href="#" onclick="myFunction('Sunny')" id="test8" style="background-color:#159CEE;"><i class="fa fa-sun-o" style="font-size:30px;"></i></a>
                             <a class="waves-effect waves-light btn" href="#" onclick="myFunction('Rainy')" id="test9" style="background-color:#159CEE;"><i class="fa fa-umbrella" style="font-size:30px;" ></i></a>
                             <a class="waves-effect waves-light btn" href="#" onclick="myFunction('Stormy')" id="test10" style="background-color:#159CEE;"><i class="fa fa-flash" style="font-size:30px;" ></i></a>
-                            <a class="waves-effect waves-light btn" href="#" onclick="myFunction('Cloudy')"id="test11" style="background-color:#159CEE;"><i class="fa fa-cloud" style="font-size:30px;" ></i></a>
+                            <a class="waves-effect waves-light btn grey" href="#" onclick="myFunction('Cloudy')"  id="test11" style="background-color:#159CEE;"><i class="fa fa-cloud" style="font-size:30px;" ></i></a>
                             </form>
 
 
@@ -140,10 +138,8 @@
                             
                             <button class="btn btn-default" onclick="submit()">Submit</button>
 
-                            <b>
-                            <div class="row green-text" id="response" style="margin-top: 42px">
+                            <div class="row blue-text" id="response" style="margin-top: 42px; font-size: 1.5em;">
                             </div>
-                            </b>
                             <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
                             <form action="/table_data" class="form-inline" method="post"
                                     role="form" enctype="application/json">
