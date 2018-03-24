@@ -10,8 +10,6 @@ main {
 
 .bgParallax {
     /* The image used */
-
-
     /* Set a specific height */
     height:1000px;
 
@@ -22,4 +20,6 @@ main {
     background-size: cover;
 }
 
-#cycle {background-image: url("dsc_0028.jpg");}
+#cycle {
+    background-image: url("dsc_0028.jpg");
+}
