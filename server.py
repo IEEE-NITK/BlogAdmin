@@ -33,7 +33,9 @@ def get_pw(username):
     if username in users:
         return users.get(username)
     return None
-
+@app.route('/about')
+def about():
+    return render_template('about.html')
 
 @app.route('/')
 @auth.login_required
