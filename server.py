@@ -1,3 +1,6 @@
+'''
+Python imports for the project
+'''
 from gevent import monkey
 import json
 from flask import Flask, request, Response, render_template, abort, url_for, jsonify
@@ -6,47 +9,30 @@ from sklearn.externals import joblib
 from flask_httpauth import HTTPDigestAuth
 import pandas as pd
 import traceback
-import numpy as np;
+import numpy as np
 
 # Flask Variables
 app = Flask(__name__)
 
-clf_pred=joblib.load('models/models_pred.pk')
-clf_exp=joblib.load('models/models_exp.pk')
-
+# Randomised SVR for Casual Users 
 svr_cas = joblib.load('models/models_new_cas.pk')
+# Randomised SVR for Regular Users 
 svr_reg = joblib.load('models/models_new_reg.pk')
 
+# Monkey Patch the server
 monkey.patch_all()
 
-auth = HTTPDigestAuth()
-
-app.config['SECRET_KEY'] = 'IEEE NITK'
-
-users = {
-    "akshay": "revankar",
-    "salman": "shah",
-    "hrishi": "hiraskar"
-}
-
-# Authenticating users from Dictionary
-@auth.get_password
-def get_pw(username):
-    if username in users:
-        return users.get(username)
-    return None
+'''
+About page which gives information about the team
+Renders static data about team members information
+'''
 @app.route('/about')
 def about():
     return render_template('about.html')
 
-@app.route('/')
-@auth.login_required
-def index():
-    print(clf_exp, clf_pred)
-    return render_template('index.html', name='Cycle Project',data1=clf_exp,data2=clf_pred)
-
-
-
+'''
+Predicting number of casual and regular users
+'''
 @app.route('/predict', methods=['POST'])
 def predict():
     print(request.json)
@@ -59,6 +45,14 @@ def predict():
         'y_reg': svr_reg.predict(features)[0]
     }
     return json.dumps(r)
+
+'''
+Home Page which describes the visualisation and the 
+necessary input and output for the same
+'''
+@app.route('/')
+def index():
+    return render_template('index.html')
 
 # Main Method in the Server code
 if __name__ == '__main__':
